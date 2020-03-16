@@ -1,16 +1,21 @@
 extends ../layouts/common
 block content
     h1 Create Book
+    if errors
+        each val in errors
+            .alert.alert-danger= val
     form(action="/users/create", method="post")
         .form-group
             label(for='exampleInputEmail1') Name
-            input#exampleInputEmail1.form-control(type='text', name="name" ,aria-describedby='emailHelp')
+            input#exampleInputEmail1.form-control(type='text', name="name" ,aria-describedby='emailHelp', value=values ? values.name : "")
         .form-group
             label(for='exampleInputEmail1') Author
-            input#exampleInputEmail1.form-control(type='text', name="author" ,aria-describedby='emailHelp')
+            input#exampleInputEmail1.form-control(type='text', name="author" ,aria-describedby='emailHelp' value=values ? values.author : "")
         .form-group
             label(for='exampleInputEmail1') Language
-            input#exampleInputEmail1.form-control(type='text', name="Language" ,aria-describedby='emailHelp')
+            input#exampleInputEmail1.form-control(type='text', name="Language" ,aria-describedby='emailHelp' value=values ? values.Language : "")
         button.btn.btn-primary(type='submit') Submit
+            
+        
                 
     
