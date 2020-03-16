@@ -1,0 +1,16 @@
+extends ../layouts/common
+block content
+    h1 Create Book
+    form(action="/users/create", method="post")
+        .form-group
+            label(for='exampleInputEmail1') Name
+            input#exampleInputEmail1.form-control(type='text', name="name" ,aria-describedby='emailHelp')
+        .form-group
+            label(for='exampleInputEmail1') Author
+            input#exampleInputEmail1.form-control(type='text', name="author" ,aria-describedby='emailHelp')
+        .form-group
+            label(for='exampleInputEmail1') Language
+            input#exampleInputEmail1.form-control(type='text', name="Language" ,aria-describedby='emailHelp')
+        button.btn.btn-primary(type='submit') Submit
+                
+    

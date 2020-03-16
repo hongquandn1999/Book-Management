@@ -1,0 +1,39 @@
+extends ../layouts/common
+block content
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='#') List Book
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        a.navbar-brand(href='/users/create') New Book
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            form.form-inline.my-2.my-lg-0(action="/users/search", method="get")
+                input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search', name="q")
+                button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+    table.table.table-bordered
+        thead
+            tr
+            th(scope='col') ID
+            th(scope='col') Name Book
+            th(scope='col') Action
+        each val in listBook    
+            tbody
+                tr
+                th(scope='row')= val.id
+                td= val.name
+                td 
+                    a(href="/users/search/" + val.id) View
+        
+    
+        
+            
+            
+            
+            
+            
+            
+
+
+
+        
+        

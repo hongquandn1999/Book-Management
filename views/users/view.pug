@@ -1,0 +1,21 @@
+extends ../layouts/common
+block content
+    h1 View Information Book
+    table.table.table-dark
+        thead
+            tr
+                th(scope='col') ID
+                th(scope='col') Name
+                th(scope='col') Author
+                th(scope='col') Language
+        tbody
+            tr
+                th(scope='row')= listBook.id 
+                td= listBook.name
+                td= listBook.author
+                td= listBook.Language
+
+
+            
+            
+        
