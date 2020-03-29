@@ -5,23 +5,7 @@ module.exports.createGet = function(req, res) {
 };
 module.exports.createPost = function(req, res) {
     req.body.id = shortId.generate();
-    var errors = [];
-    if (!req.body.name) {
-        errors.push("Name is required");
-    }
-    if (!req.body.author) {
-        errors.push("Author is required");
-    }
-    if (!req.body.language) {
-        errors.push("Language is required");
-    }
-    if (errors.length) {
-        res.render("users/create", {
-            errors: errors,
-            values: req.body
-        });
-        return;
-    }
+
     db.get("listBook")
         .push(req.body)
         .write();
